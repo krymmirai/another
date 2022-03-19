@@ -1,0 +1,7 @@
+local ws = game:GetService("Workspace")
+
+for i,v in pairs(ws:GetDescendants()) do
+   if v:IsA("Texture") then
+       v:Destroy()
+   end
+end
