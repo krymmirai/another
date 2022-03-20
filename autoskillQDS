@@ -1,0 +1,2 @@
+local ohNumber1 = 1
+game:GetService("ReplicatedStorage").RemoteEvents.SkillAttack:FireServer(ohNumber1)
