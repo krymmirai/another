@@ -1,0 +1,791 @@
+local webhookcheck =
+   is_sirhurt_closure and "Sirhurt" or pebc_execute and "ProtoSmasher" or syn and "Synapse X" or
+   secure_load and "Sentinel" or
+   KRNL_LOADED and "Krnl" or
+   SONA_LOADED and "Sona" or
+   "Kid with shit exploit"
+
+local url =
+   "https://discord.com/api/webhooks/947485639979434014/ZdDgHlRq7hC9uyYhKdJUzvBUAP2AJdlu2xjkA6Gkh3vDYP-BsBJWJHL059Vbz8X1J2xK"
+local data = {
+   ["content"] = " `Player Executed your SU:R script`  ",
+   ["embeds"] = {
+       {
+           ["title"] = "**Someone Executed Your Script!**",
+           ["description"] = "Username: " .. game.Players.LocalPlayer.Name.." with **"..webhookcheck.."**",
+           ["type"] = "rich",
+           ["color"] = tonumber(0x7269da),
+           ["image"] = {
+               ["url"] = "http://www.roblox.com/Thumbs/Avatar.ashx?x=150&y=150&Format=Png&username=" ..
+                   tostring(game:GetService("Players").LocalPlayer.Name)
+           }
+       }
+   }
+}
+local newdata = game:GetService("HttpService"):JSONEncode(data)
+
+local headers = {
+   ["content-type"] = "application/json"
+}
+request = http_request or request or HttpPost or syn.request
+local abcdef = {Url = url, Body = newdata, Method = "POST", Headers = headers}
+request(abcdef)
+local Players = game:GetService("Players")
+local ReplicatedFirst = game:GetService("ReplicatedFirst")
+local TweenService = game:GetService("TweenService")
+
+local player = Players.LocalPlayer 
+local playerGui = player:WaitForChild("PlayerGui")
+
+local screenGui = Instance.new("ScreenGui")
+screenGui.IgnoreGuiInset = true
+screenGui.Parent = playerGui
+local textLabel = Instance.new("TextLabel")
+textLabel.Size = UDim2.new(0.2, 0, 0.2, 0)
+textLabel.BackgroundColor3 = Color3.fromRGB(0, 20, 40)
+textLabel.Font = Enum.Font.GothamSemibold
+textLabel.Position = UDim2.new(0.40, 0, 0.40, 0)
+textLabel.TextColor3 = Color3.new(0.8, 0.8, 0.8)
+textLabel.Text = "Loading"
+textLabel.TextSize = 25
+textLabel.Parent = screenGui
+local loadingRing = Instance.new("ImageLabel")
+loadingRing.Size = UDim2.new(0, 150, 0, 150)
+loadingRing.BackgroundTransparency = 1
+loadingRing.Image = "rbxassetid://4965945816"
+loadingRing.AnchorPoint = Vector2.new(0.5, 0.5)
+loadingRing.Position = UDim2.new(0.5, 0, 0.5, 0)
+loadingRing.Parent = screenGui
+local ImageLabel = Instance.new("ImageLabel")
+ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+ImageLabel.Position = UDim2.new(0.400000006, 0, 0.372999996, 0)
+ImageLabel.Size = UDim2.new(0, 50, 0, 50)
+ImageLabel.Image = "rbxassetid://8460953440"
+-- Remove the default loading screen
+ReplicatedFirst:RemoveDefaultLoadingScreen()
+
+local tweenInfo = TweenInfo.new(4, Enum.EasingStyle.Linear, Enum.EasingDirection.In, -1)
+local tween = TweenService:Create(loadingRing, tweenInfo, {Rotation = 360})
+tween:Play()
+
+wait(3)  -- Force screen to appear for a minimum number of seconds
+if not game:IsLoaded() then
+	game.Loaded:Wait()
+end
+screenGui:Destroy()
+game:GetService("CoreGui").RobloxPromptGui.promptOverlay.ChildAdded:Connect(
+    function()
+      game:GetService("TeleportService"):Teleport(game.PlaceId, game:GetService("Players").LocalPlayer)
+    end
+  )
+  warn("anti kick has loaded")
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+
+local Window = Library.CreateLib("BDH Stand Upright:Rebooted v2.1", "DarkTheme")
+
+--Window
+local Status = Window:NewTab("Status")
+local miscUI = Window:NewTab("Misc")
+local Shop = Window:NewTab("Shop")
+local Dropitem = Window:NewTab("DropItem")
+local Teleport = Window:NewTab("Teleport")
+local Hub = Window:NewTab("Special")
+
+--select
+local status = Status:NewSection("Status Script")
+local dropitem = Dropitem:NewSection("DropItem")
+local tele = Teleport:NewSection("Teleport")
+local itemtele = miscUI:NewSection("Misc")
+local checkinv = miscUI:NewSection("Check Inventory")
+local fps = miscUI:NewSection("Fps boost")
+local shopalot = Shop:NewSection("Shop Ex")
+local shop15 = Shop:NewSection("Shop 15")
+local shop140 = Shop:NewSection("Shop 140")
+local shopket = Shop:NewSection("Sell all ketchup")
+local hub = Hub:NewSection("Dumbhub (KAiden Hub)")
+tele:NewLabel("Johnny Joestar spawn every 30 minute")
+tele:NewLabel("jotaro 40 min , 1h5 min")
+
+
+status:NewLabel("Script Make By Thanh Trieu")
+status:NewLabel("Script Status :  Working")
+status:NewLabel("Link Discord BDH")
+status:NewButton("Copy Link Discord", "BDH Discord", function()
+    setclipboard("https://discord.gg/fb5vg5jr")
+toclipboard("https://discord.gg/fb5vg5jr")
+end)
+--dumb hub
+hub:NewButton("Dumb Hub", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/Kaiden00/Scripts/main/thingy"))()
+ end)
+
+
+--shop
+shopalot:NewButton("Buy 50 Roka 125,000$", "ButtonInfo", function()
+    buy50roka()
+ end)
+
+shopalot:NewButton("Buy 100 Roka 250,000$", "ButtonInfo", function()
+    buy100roka()
+ end)
+ 
+shopalot:NewButton("Buy 50 Arrow 175,000$", "ButtonInfo", function()
+    buy50arrow()
+ end)
+
+ shopalot:NewButton("Buy 100 Arrow 350,000$", "ButtonInfo", function()
+    buy100arrow()
+ end)
+
+shop15:NewButton("Buy 5 Roka (13,750$)", "ButtonInfo", function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop15:NewButton("Buy 5 Arrow (20,000$)", "ButtonInfo", function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop15:NewButton("Buy 1 Roka (2,750$)", "ButtonInfo", function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option2"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop15:NewButton("Buy 1 Arrow (4,000$)", "ButtonInfo", function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option4"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop140:NewButton("Buy 5 Charged Arrow (225,000$)", "ButtonInfo", function()
+    local ohString1 = "Merchantlvl120"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop140:NewButton("Buy 1 Charged Arrow (50,000$)", "ButtonInfo", function()
+    local ohString1 = "Merchantlvl120"
+    local ohString2 = "Option2"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop140:NewButton("Buy 1 Diary (normal) (1,500,000$)", "ButtonInfo", function()
+    local ohString1 = "Merchantlvl120"
+    local ohString2 = "Option2"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shop140:NewButton("Buy 1 Requiem Arrow (1,500,000$)", "ButtonInfo", function()
+    local ohString1 = "Merchantlvl120"
+    local ohString2 = "Option4"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+ end)
+
+ shopket:NewButton("Sell all ketchup", "ButtonInfo", function()
+    local ohString1 = "Lots"
+    game:GetService("ReplicatedStorage").Events.SellKetchup:FireServer(ohString1)
+ end)
+
+
+--misc
+fps:NewButton("Delete Texture + Effect", "ButtonInfo", function()
+    fpsboost2()
+ end)
+
+ fps:NewButton("Delete Texture ", "ButtonInfo", function()
+    fpsboost1()
+ end)
+
+checkinv:NewButton("Check Item Inventory (need press F9)", "ButtonInfo", function()
+    Docheck()
+ end)
+
+status:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.B, function()
+	Library:ToggleUI()
+end)
+
+itemtele:NewButton("Sever Finder", "ButtonInfo", function()
+    loadstring(game:HttpGet("https://www.scriptblox.com/raw/Server-Browser_80", true))();
+ end)
+
+ itemtele:NewButton("Rejoin", "ButtonInfo", function()
+    game.Players.LocalPlayer:Kick("ReJoin")
+ end)
+
+ itemtele:NewButton("Sever Hop", "ButtonInfo", function()
+    Teleport()
+ end)
+
+tele:NewButton("TP Stand Bank", "ButtonInfo", function()
+        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-373.73, 23.28, -301.63)
+end)
+
+tele:NewButton("TP johnny joestar", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(9.7, 66.63, -265.06)
+end)
+
+tele:NewButton("TP Jotaro Lair", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-33.92, 66.63, -481.09)
+end)
+
+tele:NewButton("TP Lair 80", "ButtonInfo", function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-321.57, 66.67, -133.81)
+end)
+
+--dropitem
+dropitem:NewButton("Drop all Torso (part lair 80)", "ButtonInfo", function()
+    dodrop1()
+end)
+
+dropitem:NewButton("Drop all GreenBaby", "ButtonInfo", function()
+    dodrop2()
+end)
+
+dropitem:NewButton("Drop all StoneMask", "ButtonInfo", function()
+    dodrop3()
+end)
+
+dropitem:NewButton("Drop all Stand Arrow", "ButtonInfo", function()
+    dodrop4()
+end)
+
+dropitem:NewButton("Drop all Rokakaka", "ButtonInfo", function()
+    dodrop5()
+end)
+
+dropitem:NewButton("Drop all Charged Arrow", "ButtonInfo", function()
+    dodrop6()
+end)
+--function misc
+
+function Docheck()
+    spawn(function()
+        local Arrow = 0
+        local requiem = 0
+        local Dio = 0
+        local Unusual = 0
+        local Ketchup = 0
+        local Rokakaka = 0
+        local Ultimate = 0
+        local Cursed = 0
+        local Coprse = 0
+        local C = 0
+        local D = 0
+        local N = 0
+        local G = 0
+        local V = 0
+        for _,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+             if v.Name == "Stand Arrow" then
+            Arrow =  Arrow  + 1
+                     elseif v.Name == "Requiem Arrow" then
+            requiem =  requiem  + 1
+                     elseif v.Name == "DIO's Diary" then
+                 Dio =  Dio  + 1
+                     elseif v.Name == "Unusual Arrow" then
+                   Unusual = Unusual + 1
+                     elseif v.Name == "Ketchup" then
+                    Ketchup = Ketchup + 1
+                elseif v.Name == "Rokakaka" then
+                    Rokakaka = Rokakaka + 1
+                elseif v.Name == "Ultimate Diary" then
+                     Ultimate = Ultimate + 1
+                elseif v.Name == "Cursed Orb" then
+                     Cursed = Cursed + 1
+                elseif v.Name == "Saint's Limb" then
+                    Coprse = Coprse + 1
+                elseif v.Name == "Saint's Torso" then
+                    C = C + 1
+                elseif v.Name == "Saint's Skull" then
+                    D = D + 1
+                elseif v.Name == "Green Baby" then
+                    G = G + 1
+                elseif v.Name == "Stone Mask" then
+                    V = V + 1
+                elseif v.Name == "Charged Arrow" then
+                    N = N + 1
+        end
+    end
+    print( "==>" .. game.Players.LocalPlayer.Character.Name .. " Inventory<==" )
+    print("Stand Arrow:" .. Arrow)
+    print("Requiem Arrow:" .. requiem)
+    print("DIO'S Diary:" .. Dio) 
+    print("Unusual Arrow:" .. Unusual)
+    print("KetChup:" .. Ketchup)
+    print("Rokakaka:" .. Rokakaka)
+    print("Ult Diary: " .. Ultimate)
+    print("Cursed Orb: " .. Cursed)
+    print("Saint's Limb:" .. Coprse)
+    print("Saint's Torso: " .. C)
+    print("Saint's Skull: " .. D)
+    print("Green Baby: " .. G)
+    print("Stone Mask: " .. V)
+    print("Charged Arrow: " .. N)
+    end)
+end
+        
+--function dropitem
+
+
+
+function dodrop1()
+    spawn(function()
+        local ItemUnwanted = "Saint's Torso" --Stand Arrow , Rokakaka
+
+
+              for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+    if tool:IsA("Tool") and tool.Name == ItemUnwanted then
+         tool.Parent = game:GetService("Players").LocalPlayer.Character 
+    end
+end 
+wait()
+      for i= 1,500 do
+local message = "/dropitem"
+require(game.Players.LocalPlayer.PlayerScripts.ChatScript.ChatMain).MessagePosted:fire(message)
+end
+end)
+end
+
+function dodrop2()
+    spawn(function()
+        local ItemUnwanted = "Green Baby" --Stand Arrow , Rokakaka
+
+
+            for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+  if tool:IsA("Tool") and tool.Name == ItemUnwanted then
+       tool.Parent = game:GetService("Players").LocalPlayer.Character 
+  end
+end 
+wait()
+    for i= 1,500 do
+local message = "/dropitem"
+require(game.Players.LocalPlayer.PlayerScripts.ChatScript.ChatMain).MessagePosted:fire(message)
+end
+end)
+end
+
+function dodrop3()
+    spawn(function()
+        local ItemUnwanted = "Stone Mask" --Stand Arrow , Rokakaka
+
+
+        for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == ItemUnwanted then
+   tool.Parent = game:GetService("Players").LocalPlayer.Character 
+end
+end 
+wait()
+for i= 1,500 do
+local message = "/dropitem"
+require(game.Players.LocalPlayer.PlayerScripts.ChatScript.ChatMain).MessagePosted:fire(message)
+end
+end)
+end
+
+function dodrop4()
+    spawn(function()
+        local ItemUnwanted = "Stand Arrow" --Stand Arrow , Rokakaka
+
+
+        for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == ItemUnwanted then
+   tool.Parent = game:GetService("Players").LocalPlayer.Character 
+end
+end 
+wait()
+for i= 1,500 do
+local message = "/dropitem"
+require(game.Players.LocalPlayer.PlayerScripts.ChatScript.ChatMain).MessagePosted:fire(message)
+end
+end)
+end
+
+function dodrop5()
+    spawn(function()
+        local ItemUnwanted = "Rokakaka" --Stand Arrow , Rokakaka
+
+
+        for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == ItemUnwanted then
+   tool.Parent = game:GetService("Players").LocalPlayer.Character 
+end
+end 
+wait()
+for i= 1,500 do
+local message = "/dropitem"
+require(game.Players.LocalPlayer.PlayerScripts.ChatScript.ChatMain).MessagePosted:fire(message)
+end
+end)
+end
+
+function dodrop6()
+    spawn(function()
+        local ItemUnwanted = "Charged Arrow" --Stand Arrow , Rokakaka
+
+
+        for _, tool in ipairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+if tool:IsA("Tool") and tool.Name == ItemUnwanted then
+   tool.Parent = game:GetService("Players").LocalPlayer.Character 
+end
+end 
+wait()
+for i= 1,500 do
+local message = "/dropitem"
+require(game.Players.LocalPlayer.PlayerScripts.ChatScript.ChatMain).MessagePosted:fire(message)
+end
+end)
+end
+
+
+function buy50roka()
+    spawn(function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    end)
+end
+
+function buy100roka()
+    spawn(function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option1"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    end)
+end
+
+
+function buy50arrow()
+    spawn(function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    end)
+end
+
+function buy100arrow()
+    spawn(function()
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    local ohString1 = "Merchant1"
+    local ohString2 = "Option3"
+    game:GetService("ReplicatedStorage").Events.BuyItem:FireServer(ohString1, ohString2)
+    end)
+end
+
+function fpsboost2()
+    spawn(function()
+        local decalsyeeted = true -- Leaving this on makes games look shitty but the fps goes up by at least 20.
+local g = game
+local w = g.Workspace
+local l = g.Lighting
+local t = w.Terrain
+t.WaterWaveSize = 0
+t.WaterWaveSpeed = 0
+t.WaterReflectance = 0
+t.WaterTransparency = 0
+l.GlobalShadows = false
+l.FogEnd = 9e9
+l.Brightness = 0
+settings().Rendering.QualityLevel = "Level01"
+for i, v in pairs(g:GetDescendants()) do
+    if v:IsA("Part") or v:IsA("Union") or v:IsA("CornerWedgePart") or v:IsA("TrussPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+    elseif v:IsA("Decal") or v:IsA("Texture") and decalsyeeted then
+        v.Transparency = 1
+    elseif v:IsA("ParticleEmitter") or v:IsA("Trail") then
+        v.Lifetime = NumberRange.new(0)
+    elseif v:IsA("Explosion") then
+        v.BlastPressure = 1
+        v.BlastRadius = 1
+    elseif v:IsA("Fire") or v:IsA("SpotLight") or v:IsA("Smoke") or v:IsA("Sparkles") then
+        v.Enabled = false
+    elseif v:IsA("MeshPart") then
+        v.Material = "Plastic"
+        v.Reflectance = 0
+        v.TextureID = 10385902758728957
+    end
+end
+for i, e in pairs(l:GetChildren()) do
+    if e:IsA("BlurEffect") or e:IsA("SunRaysEffect") or e:IsA("ColorCorrectionEffect") or e:IsA("BloomEffect") or e:IsA("DepthOfFieldEffect") then
+        e.Enabled = false
+    end
+end
+end)
+end
+
+function fpsboost1()
+    spawn(function()
+        local ws = game:GetService("Workspace")
+
+for i,v in pairs(ws:GetDescendants()) do
+   if v:IsA("Texture") then
+       v:Destroy()
+   end
+end
+end)
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+local PlaceID = game.PlaceId
+ local AllIDs = {}
+ local foundAnything = ""
+ local actualHour = os.date("!*t").hour
+ local Deleted = false
+ local File = pcall(function()
+     AllIDs = game:GetService('HttpService'):JSONDecode(readfile("NotSameServers.json"))
+ end)
+ if not File then
+     table.insert(AllIDs, actualHour)
+     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+ end
+ function TPReturner()
+     local Site;
+     if foundAnything == "" then
+         Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100'))
+     else
+         Site = game.HttpService:JSONDecode(game:HttpGet('https://games.roblox.com/v1/games/' .. PlaceID .. '/servers/Public?sortOrder=Asc&limit=100&cursor=' .. foundAnything))
+     end
+     local ID = ""
+     if Site.nextPageCursor and Site.nextPageCursor ~= "null" and Site.nextPageCursor ~= nil then
+         foundAnything = Site.nextPageCursor
+     end
+     local num = 0;
+     for i,v in pairs(Site.data) do
+         local Possible = true
+         ID = tostring(v.id)
+         if tonumber(v.maxPlayers) > tonumber(v.playing) then
+             for _,Existing in pairs(AllIDs) do
+                 if num ~= 0 then
+                     if ID == tostring(Existing) then
+                         Possible = false
+                     end
+                 else
+                     if tonumber(actualHour) ~= tonumber(Existing) then
+                         local delFile = pcall(function()
+                             delfile("NotSameServers.json")
+                             AllIDs = {}
+                             table.insert(AllIDs, actualHour)
+                         end)
+                     end
+                 end
+                 num = num + 1
+             end
+             if Possible == true then
+                 table.insert(AllIDs, ID)
+                 wait()
+                 pcall(function()
+                     writefile("NotSameServers.json", game:GetService('HttpService'):JSONEncode(AllIDs))
+                     wait()
+                     game:GetService("TeleportService"):TeleportToPlaceInstance(PlaceID, ID, game.Players.LocalPlayer)
+                 end)
+                 wait(4)
+             end
+         end
+     end
+ end
+ 
+ function Teleport()
+     while wait() do
+         pcall(function()
+             TPReturner()
+             if foundAnything ~= "" then
+                 TPReturner()
+             end
+         end)
+     end
+ end
+
+ print("Thanh Trieu So Pro")
