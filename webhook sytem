@@ -37,6 +37,23 @@ local data = {
                     }
                 }
             }
+
+local data = {
+    ["content"] = "",
+    ["username"] = "Anime Adventures",
+    ["avatar_url"] = "https://www.icegif.com/wp-content/uploads/2021/11/icegif-1286.gif",
+    ["embeds"] = {
+        {
+            ["title"] = "**Anime Adventures Inf**",
+            ["description"] = "Lost on wave: " .. game:GetService("Workspace")["_wave_num"].Value .. ".  Amount of Gems Earned: " ..game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.GoldGemXP.GemReward.Main.Amount.Text.. ". Time Taken: " ..game.Players.LocalPlayer.PlayerGui.ResultsUI.Holder.Middle.Timer.Text.. " ",
+                                
+            ["type"] = "rich",
+            ["color"] = tonumber(0x7269da),
+            
+        }
+    }
+ }
+
 local newdata = game:GetService("HttpService"):JSONEncode(data)
 
 local headers = {
