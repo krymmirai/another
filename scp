@@ -45,7 +45,7 @@ end)
 stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
 	Library:ToggleUI()
 end)
-funtion ep()
+function ep()
 loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/another/main/test",true))()
 end
 --
