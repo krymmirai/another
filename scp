@@ -6,7 +6,7 @@ local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHept
 
 --UI Library Window
 
-local Window = Library.CreateLib("Zero2 Hub / ", "Midnight")
+local Window = Library.CreateLib("Zero2 Hub / Break key Second Piece ", "Midnight")
 local status = Window:NewTab("Status")
 
 --status
@@ -40,6 +40,42 @@ stat:NewButton("Sever Hop", "ButtonInfo", function()
 end)
 
 stat:NewButton("Secret", "Key = IP", function()
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "By pass Key" -- Required
+})
+wait(1.5)
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "33%" -- Required
+})
+wait(1.5)
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "54%" -- Required
+})
+wait(1.5)
+
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "85%" -- Required
+})
+wait(1.5)
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "97%" -- Required
+})
+wait(1)
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "Chờ tí làm gì căng" -- Required
+})
+game:GetService("StarterGui"):SetCore("SendNotification",{
+	Title = "Đang Bẻ Khóa", -- Required
+	Text = "Bẻ Khóa thành công Key = ip" -- Required
+})
     ep()
 end)
 stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
