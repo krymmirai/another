@@ -82,6 +82,6 @@ stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function(
 	Library:ToggleUI()
 end)
 function ep()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/another/main/test",true))()
+game.Players.LocalPlayer:kick("Trôn Trôn VietNam")
 end
 --
