@@ -2,7 +2,7 @@ if not game:IsLoaded() then
     game.Loaded:Wait()
     end
     wait()
-local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/string-script/main/KavoUILibrary"))()
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/string-script/main/Kavo-UI-Library"))()
 
 --UI Library Window
 
@@ -39,49 +39,16 @@ stat:NewButton("Sever Hop", "ButtonInfo", function()
     TPS:TeleportToPlaceInstance(_place,Server.id,game.Players.LocalPlayer)
 end)
 
-stat:NewButton("Secret", "Key = IP", function()
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "By pass Key" -- Required
-})
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "33%" -- Required
-})
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "54%" -- Required
-})
-wait(1.5)
-
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "85%" -- Required
-})
-wait(1.5)
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "97%" -- Required
-})
-wait(1)
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "Chờ tí làm gì căng" -- Required
-})
-game:GetService("StarterGui"):SetCore("SendNotification",{
-	Title = "Đang Bẻ Khóa", -- Required
-	Text = "Bẻ Khóa thành công Key = ip" -- Required
-})
-    ep()
+stat:NewButton("Crazy Hub", "None", function()
+loadstring(game:HttpGetAsync("https://raw.githubusercontent.com/CrazyHub123/NexusHubMain/main/Main.lua", true))()
 end)
+
+stat:NewButton("Xhub (Auto World Boss)", "None", function()
+loadstring(game:HttpGet("https://raw.githubusercontent.com/Is-X-HUB/ByX-HUB/main/2Day",true))()
+end)
+
 stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
 	Library:ToggleUI()
 end)
-function ep()
-loadstring(game:HttpGet("https://raw.githubusercontent.com/krymmirai/another/main/test",true))()
-end
+
 --
