@@ -22,12 +22,13 @@ stat:NewButton("Copy JobId", "ButtonInfo", function()
 end)
 stat:NewLabel("Script Make By SadThudatinh (Owner)")
 stat:NewButton("Sever Hop", "ButtonInfo", function()
-    Teleport()
+    svhop()
 end)
 stat:NewKeybind("KeybindText", "KeybindInfo", Enum.KeyCode.KeypadZero, function()
 	Library:ToggleUI()
 end)
 --sv hop
+function svhop()
 local PlaceID = game.PlaceId
 local AllIDs = {}
 local foundAnything = ""
